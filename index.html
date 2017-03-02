@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crystal Collector</title>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+<body>
+
+<!-- Jumbotron for Title -->
+<div class="jumbotron">
+    <h1 class="text-center">Crystal Collector</h1>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">Rules</h3>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <p>You will be given a random number at the start of the game.
+                <br><br>
+                There are four crystals below. By checking on a rystal you will add a specific amount of points to your total score.
+                <br><br>
+                You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.
+                <br><br>
+                The value of each crystal is hidden from you until you click on it.
+                <br><br>
+                Each time when the game starts, the game will change the values of each crystal.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8 ">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center">Target Number</h3>
+                </div>
+            </div>
+            <div class="panel-body">
+                <p class="#">
+                    45
+                </p>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center">Score</h3>
+                </div>
+            </div>
+            <div class="panel-body">
+                <ul class="list-unstyled">
+                    <li class="#" id="#">You win!</li><br>
+                    <li class="#">Win: </li><p id="#">3</p> 
+                    <li class="#">Lose: </li> <p id="#">1</p> 
+                </ul>  
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">Crystals</h3>
+            </div>
+        </div>
+        <div class="panel-body">
+            <img class="#" id="#" src="#" alt="Crystal 1">
+            <img class="#" id="#" src="#" alt="Crystal 2">
+            <img class="#" id="#" src="#" alt="Crystal 3">
+            <img class="#" id="#" src="#" alt="Crystal 4">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">Your Score</h3>
+            </div>
+        </div>
+        <div class="panel-body">
+           <p class="#"></p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            var varA = 5;
+            var varB = 4;
+
+            doMath = function() {
+
+                varA += varB;
+        
+            };
+            
+            console.log(doMath());
+ 
+
+    
+
+    $(".number").on("click", function() {
+
+        if(isOp == false) {
+
+            $firstNumber.append(this.value);
+
+
+        } else {
+
+            $secondNumber.append(this.value);
+
+        }
+
+    });
+
+    $(".operator").on("click", function() {
+
+         $operator.text(this.value);
+         isOp = true;
+
+    });
+
+    $(".equal").on("click", function() {
+
+        var result = 0;
+
+        if($firstNumber.text() && $operator.text() && $secondNumber.text()){
+
+            var num1 = parseInt($firstNumber.text());
+            var num2 = parseInt($secondNumber.text());
+
+            result = num1 + num2;
+
+            $result.text(result);
+
+
+
+        }
+
+        
+
+        // $result.text("coming soon...");
+
+    });
+
+
+
+
+
+
+     // $("#button-clear").on("click", function() {
+          
+     //      $("#result").empty();
+
+     //  });
+     
+
+
+
+
+
+
+
+
+
+
+});
+
+        </script>
+
+    </body>
+</html>
