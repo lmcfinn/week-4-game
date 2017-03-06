@@ -10,6 +10,9 @@
     <!-- Added a link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+
+        <script type="text/javascript" src="assets/javascript/game.js"></script>
+
 </head>
 <body>
 
@@ -49,8 +52,8 @@
                 </div>
             </div>
             <div class="panel-body">
-                <p class="#">
-                    45
+                <p class="target">
+                    
                 </p>
             </div>
         </div>
@@ -63,9 +66,9 @@
             </div>
             <div class="panel-body">
                 <ul class="list-unstyled">
-                    <li class="#" id="#">You win!</li><br>
-                    <li class="#">Win: </li><p id="#">3</p> 
-                    <li class="#">Lose: </li> <p id="#">1</p> 
+                    <!-- <li id="#">You win!</li><br> -->
+                    <li>Win: </li><p id="youWin"></p> 
+                    <li>Loss: </li> <p id="youLose"></p> 
                 </ul>  
             </div>
         </div>
@@ -78,10 +81,10 @@
             </div>
         </div>
         <div class="panel-body">
-            <img class="#" id="#" src="#" alt="Crystal 1">
-            <img class="#" id="#" src="#" alt="Crystal 2">
-            <img class="#" id="#" src="#" alt="Crystal 3">
-            <img class="#" id="#" src="#" alt="Crystal 4">
+            <img class="#" id="crystal1" src="assets/images/c4.png" alt="Crystal 1">
+            <img class="#" id="crystal2" src="assets/images/c4.png" alt="Crystal 2">
+            <img class="#" id="crystal3" src="assets/images/c4.png" alt="Crystal 3">
+            <img class="#" id="crystal4" src="assets/images/c4.png" alt="Crystal 4">
         </div>
     </div>
 
@@ -92,88 +95,11 @@
             </div>
         </div>
         <div class="panel-body">
-           <p class="#"></p>
+           <p class="yourscore"></p>
         </div>
     </div>
 
-    <script type="text/javascript">
-
-        $(document).ready(function(){
-
-            
- 
-
-    
-
-    $(".number").on("click", function() {
-
-        if(isOp == false) {
-
-            $firstNumber.append(this.value);
 
 
-        } else {
-
-            $secondNumber.append(this.value);
-
-        }
-
-    });
-
-    $(".operator").on("click", function() {
-
-         $operator.text(this.value);
-         isOp = true;
-
-    });
-
-    $(".equal").on("click", function() {
-
-        var result = 0;
-
-        if($firstNumber.text() && $operator.text() && $secondNumber.text()){
-
-            var num1 = parseInt($firstNumber.text());
-            var num2 = parseInt($secondNumber.text());
-
-            result = num1 + num2;
-
-            $result.text(result);
-
-
-
-        }
-
-        
-
-        // $result.text("coming soon...");
-
-    });
-
-
-
-
-
-
-     // $("#button-clear").on("click", function() {
-          
-     //      $("#result").empty();
-
-     //  });
-     
-
-
-
-
-
-
-
-
-
-
-});
-
-        </script>
-
-    </body>
+</body>
 </html>
