@@ -34,9 +34,16 @@
             function createCrystalValues() {
 
                 crys1 = crystalNum();
+                console.log(crys1);
+                
                 crys2 = crystalNum();
+                console.log(crys2);
+
                 crys3 = crystalNum();
+                console.log(crys3);
+
                 crys4 = crystalNum();
+                console.log(crys4);
 
             };
 
@@ -45,24 +52,32 @@
 
             createCrystalValues();
 
-            // Add values to Score and also print Score
 
-        
-            $("#crystal1").on("click", function() {
+            $("#crystal1").data("c", crys1);
+            $("#crystal2").data("c", crys2);
+            $("#crystal3").data("c", crys3);
+            $("#crystal4").data("c", crys4);
 
-                score += crys1;
-                // console.log("crys1: " + score);
+
+            $(".crysicon").on("click", function() {
+
+                
+                score += $(this).data("c");
+
+
                 $(".yourscore").html(score);
+
+             
 
                 if(score == target) {
 
                     win++;
-                    $("#youWin").html(win);
                     score = 0;
-                    $(".yourscore").html(score);
                     createCrystalValues();
-
                     target = targetNum();
+
+                    $(".yourscore").html(score);
+                    $("#youWin").html(win);
                     $(".target").html(target);
                     
                 };
@@ -70,126 +85,19 @@
                 if(score > target) {
 
                     loss++;
-                    $("#youLose").html(loss)
                     score = 0;
-                    $(".yourscore").html(score);
+                    target = targetNum();
                     createCrystalValues();
 
-                    target = targetNum();
+                    $("#youLose").html(loss)
+                    $(".yourscore").html(score);
                     $(".target").html(target);
                 };
                 
 
             });
             
-            
-            $("#crystal2").on("click", function() {
-
-                score += crys2;
-                // console.log("crys2: " + score);
-                $(".yourscore").html(score);
-
-                if(score == target) {
-
-                    win++;
-                    $("#youWin").html(win);
-                    score = 0;
-                    $(".yourscore").html(score);
-                    createCrystalValues();
-
-                    target = targetNum();
-                    $(".target").html(target);
-                    
-
-                };
-
-                if(score > target) {
-
-                    loss++;
-                    $("#youLose").html(loss)
-                    score = 0;
-                    $(".yourscore").html(score);
-                    createCrystalValues();
-
-                    target = targetNum();
-                    $(".target").html(target);
-                };
-               
-            });
-
-
-            $("#crystal3").on("click", function() {
-
-                score += crys3;
-                // console.log("crys3: " + score);
-                $(".yourscore").html(score);
-
-
-                if(score == target) {
-
-                    win++;
-                    $("#youWin").html(win);
-                    score = 0;
-                    $(".yourscore").html(score);
-
-                    createCrystalValues();
-
-                    target = targetNum();
-                    $(".target").html(target);
-
-                };
-
-                if(score > target) {
-
-                    loss++;
-                    $("#youLose").html(loss)
-                    score = 0;
-                    $(".yourscore").html(score);
-
-                    createCrystalValues();
-
-                    target = targetNum();
-                    $(".target").html(target);
-                };
-
-            });
-
-
-            $("#crystal4").on("click", function() {
-
-                score += crys4;
-                // console.log("crys4: " + score);
-                $(".yourscore").html(score);
-
-                if(score == target) {
-
-                    win++;
-                    $("#youWin").html(win);
-                    score = 0;
-                    $(".yourscore").html(score);
-
-                    createCrystalValues();
-
-                    target = targetNum();
-                    $(".target").html(target); 
-
-                };
-
-                if(score > target) {
-
-                    loss++;
-                    $("#youLose").html(loss)
-                    score = 0;
-                    $(".yourscore").html(score);
-
-                    createCrystalValues();
-
-                    target = targetNum();
-                    $(".target").html(target);
-                    
-                };
-       
-            });  
+      
 
             
         });
